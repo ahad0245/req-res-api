@@ -21,7 +21,7 @@ mongoose.connect(uri, {
 });
 
 // Basic Route
-app.get('/', (req, res) => {
+app.get('/contacts', (req, res) => {
     res.send('Hello, world!');
 });
 
@@ -43,7 +43,7 @@ app.post('/add-contact', async (req, res) => {
 });
 
 // Route to fetch contacts
-app.get('/contacts', async (req, res) => {
+app.get('/', async (req, res) => {
     try {
         const contacts = await Contact.find();
         res.json(contacts);
